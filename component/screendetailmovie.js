@@ -22,7 +22,7 @@ export default function Screenmoviedetail(props) {
       <View style={{flex: 1}}>
         <Image
           style={{
-            backgroundColor: 'red',
+            backgroundColor: 'lightgray',
             flex: 1,
             width: '45%',
             height: '100%',

@@ -39,7 +39,7 @@ export default function Screenserch() {
               backgroundColor: 'white',
             }}
             onChangeText={text => setTexsearch(text)}
-            placeholder={'Search'}
+            placeholder={'seach'}
             value={textsearch}
           />
           <TouchableOpacity

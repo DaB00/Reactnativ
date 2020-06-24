@@ -6,8 +6,8 @@ const movieReducer = (state, action) => {
  
   switch (action.type) {
     case 'ADD_HISTORY':
-        if(state.find(title=>title==action.payload)==undefined){
-            return [...state,action.payload].reverse()
+        if(state.find(title=>title==action.payload)==undefined&&action.payload!==""){
+            return  [action.payload,...state]
         }else{
             return state
         }
