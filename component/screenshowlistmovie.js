@@ -16,7 +16,7 @@ export default function Screenshowlist(props) {
   })
   useEffect(() => {
     fetapi(textsearch,page);
-  }, []);
+  }, [movielist]);
   const fetapi = async( textsearch,page) => {
     try{
       const res = await SCBmovieAPI.get('/api/movies/search', {
