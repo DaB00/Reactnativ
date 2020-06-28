@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native-gesture-handler';
-import styles from './styles/screenserchstyles'
+import styles from './styles/screenserchstyles';
 import {Context as HistoryContext} from '../context/moviecontext';
-//   fetapi();
+import HeaderRight from '../component/HeaderRight';
 export default function Screenserch() {
   const navigation = useNavigation();
   const [textsearch, setTexsearch] = useState('');
@@ -16,38 +16,28 @@ export default function Screenserch() {
 
   navigation.setOptions({
     title: '',
-    headerRight: () => (
-      <View>
-        <Button
-          title="Favorite"
-          onPress={() => navigation.navigate('Favorite')}
-        />
-      </View>
-    ),
+    headerRight: () => <HeaderRight title={'Favorite'} goTo={'Favorite'} />,
   });
   return (
     <SafeAreaView style={styles.container}>
-      
-        <View style={styles.boxSerch}>
-          <TextInput
-            style={styles.textinput}
-            onChangeText={text => setTexsearch(text)}
-            placeholder={'seach'}
-            value={textsearch}
-          />
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Listmovie', {textsearch: textsearch}),
-                addHistory(textsearch),
-                setTexsearch('');
-            }}
-            style={styles.TouchableBoxSerch}>
-            <Text style={styles.textSerch}>
-              search
-            </Text>
-          </TouchableOpacity>
-        </View>
-      
+      <View style={styles.boxSerch}>
+        <TextInput
+          style={styles.textinput}
+          onChangeText={text => setTexsearch(text)}
+          placeholder={'seach'}
+          value={textsearch}
+        />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Listmovie', {textsearch: textsearch}),
+              addHistory(textsearch),
+              setTexsearch('');
+          }}
+          style={styles.TouchableBoxSerch}>
+          <Text style={styles.textSerch}>search</Text>
+        </TouchableOpacity>
+      </View>
+
       <FlatList
         data={state}
         keyExtractor={item => item}
@@ -62,5 +52,3 @@ export default function Screenserch() {
     </SafeAreaView>
   );
 }
-
-

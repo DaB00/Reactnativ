@@ -11,6 +11,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Context as FavoriteContext} from '../context/favoriteContex';
 import {useNavigation} from '@react-navigation/native';
 import styles from './styles/Stylesscreenmoviedetail'
+import HeaderRight from '../component/HeaderRight'
 export default function Screenmoviedetail(props) {
   const data = props.route.params;
   const {state, addFavorite, removeFavorite} = useContext(FavoriteContext);
@@ -18,12 +19,8 @@ export default function Screenmoviedetail(props) {
   navigation.setOptions({
     title: '',
     headerRight: () => (
-      <View>
-        <Button
-          title=" Back to Search"
-          onPress={() => navigation.navigate('Search')}
-        />
-      </View>
+      <HeaderRight  title={" Back to Search"} goTo={'Search'}/>
+     
     ),
   });
   return (
