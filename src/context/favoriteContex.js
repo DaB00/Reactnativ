@@ -21,7 +21,7 @@ const addFavorite = dispatch => {
 const removeFavorite = dispatch => {
     
   return id => {
-      console.log(id)
+      
     dispatch({type: 'REMOVE_FAVORITE', paylaod: id});
   };
 };

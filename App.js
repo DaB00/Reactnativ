@@ -3,12 +3,12 @@ import React from 'react';
 import {} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import  { createStackNavigator } from '@react-navigation/stack';
-import Screenserch from './component/screenserch'
-import Screendetailmovie from './component/screendetailmovie'
-import Screenfavorite from './component/screenfavorite'
-import Screenshowlistmovie from './component/screenshowlistmovie'
-import {Provide as BlogcProvider} from './context/moviecontext'
-import {Provide as FavoriteProvider} from './context/favoriteContex'
+import Screenserch from './src/Screens/screenserch'
+import Screendetailmovie from './src/Screens/screendetailmovie'
+import Screenfavorite from './src/Screens/screenfavorite'
+import Screenshowlistmovie from './src/Screens/screenshowlistmovie'
+import {Provide as BlogcProvider} from './src/context/moviecontext'
+import {Provide as FavoriteProvider} from './src/context/favoriteContex'
 
 
 
