@@ -1,17 +1,10 @@
 import React, {useContext} from 'react';
-import {
-  SafeAreaView,
-  Text,
-  View,
-  Image,
-  Button,
-  
-} from 'react-native';
+import {SafeAreaView, Text, View, Image, Button} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Context as FavoriteContext} from '../context/favoriteContex';
 import {useNavigation} from '@react-navigation/native';
-import styles from './styles/Stylesscreenmoviedetail'
-import HeaderRight from '../component/HeaderRight'
+import styles from './styles/Stylesscreenmoviedetail';
+import HeaderRight from '../component/HeaderRight';
 export default function Screenmoviedetail(props) {
   const data = props.route.params;
   const {state, addFavorite, removeFavorite} = useContext(FavoriteContext);
@@ -19,8 +12,7 @@ export default function Screenmoviedetail(props) {
   navigation.setOptions({
     title: '',
     headerRight: () => (
-      <HeaderRight  title={" Back to Search"} goTo={'Search'}/>
-     
+      <HeaderRight title={' Back to Search'} goTo={'Search'} />
     ),
   });
   return (
@@ -56,5 +48,3 @@ export default function Screenmoviedetail(props) {
     </SafeAreaView>
   );
 }
-
-
